@@ -34,6 +34,7 @@ pre, code {
 .inner {
   display: flex;
   flex-direction: column;
+  flex-grow: 0;
   position: relative;
   max-width: 1024px;
   padding: 20px 10px;
@@ -43,20 +44,28 @@ pre, code {
 .main-columns {
   display: flex;
   flex-direction: row;
+  flex-grow: 0;
   position: relative;
-  max-width: 1024px;
+  width: 1024px;
   padding: 20px 10px;
   margin: 0 auto;
 }
 
 .main-area {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  width: 768px;
 }
 
 .sidebar {
   width: 256px;
   margin-left: 24px;
   flex-shrink: 0;
+}
+
+.post-area {
+  display: block;
 }
 
 .post-title {

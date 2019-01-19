@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Functional JavaScript Programming -- Part #1: Introduction"
+title:  "Functional JavaScript Programming — Part #1: Introduction"
 date:   2016-10-15 13:20:00 +0100
-categories: javascript 
+categories: javascript
+abstract: >-
+  Functional programming is an awesome thing. There are many functional languages out of the space, so if you want to cultivate your knowledge in an artistic level, you can turn to a significant number of them including Haskell, OCaml, F#, ML, Clojure, Erlang, Lisp, and many more.
 ---
 Functional programming is an awesome thing. There are many functional languages out of the space, so if you want to cultivate your knowledge in an artistic level, you can turn to a significant number of them including Haskell, OCaml, F#, ML, Clojure, Erlang, Lisp, and many more. However, in this series, I will teach you the fundamentals of functional programming in JavaScript. As of this writing, JavaScript means rather ES 2015 (in its maiden name, ES6, or EcmaScript 6) than the good old ES5 — thus I will incorporate ES 2015 features into the samples and explanations whenever I can.
 
