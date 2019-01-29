@@ -13,7 +13,8 @@ In this post, you will learn how you can add tool windows to a VSPackage.
 
 We are going to create a very simple package with a single tool window. Start with a new VSIX project—name it __SimpleToolWindowPackage__—and then, add a new VSPackage to the project—name it __SimpleToolWindowPackage__, too.
 
-_NOTE: If you do not remember how to carry out these simple steps, go back to [Part #2](/visual/studio/extensibility/2016/12/29/vsxreloaded-part-2.html), and read it again._
+{: class="note"}
+__Note__: If you do not remember how to carry out these simple steps, go back to [Part #2](/visual/studio/extensibility/2016/12/29/vsxreloaded-part-2.html), and read it again.
 
 ### Adding a Tool Window
 
@@ -136,7 +137,8 @@ var windowFrame = (IVsWindowFrame)window.Frame;
 Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
 ```
 
-_NOTE: The in the code above I used the 0 instance identifier, you can use an arbitrary ID. The important thing is that you should always use the same ID; otherwise, the shell would create new tool windows for every separate ID._
+{: class="note"}
+__Note__: The in the code above I used the 0 instance identifier, you can use an arbitrary ID. The important thing is that you should always use the same ID; otherwise, the shell would create new tool windows for every separate ID.
 
 ### Declaring a Tool Window
 
@@ -162,11 +164,13 @@ namespace SimpleToolWindowPackage
 
 The code is pretty concise. The Managed Package Framework supports only tool window classes that derive from the `ToolWindowPane` class of the `Microsoft.VisualStudio.Shell` namespace. Within the shell the COM technology is used, and—accordingly—every COM object type must have its unique GUID. Here we specify this ID with the Guid attribute. In the constructor, we have to invoke the base class’s constructor with passing `null`.
 
-_NOTE: The base class accepts a `System.IServiceProvider` object that the created window can use to obtain services from the shell. The Managed Package Framework implementation does not allow the tool window to add itself to the shell through services. Thus we need to pass null when invoking the constructor of the base class._
+{: class="note"}
+__Note__: The base class accepts a `System.IServiceProvider` object that the created window can use to obtain services from the shell. The Managed Package Framework implementation does not allow the tool window to add itself to the shell through services. Thus we need to pass null when invoking the constructor of the base class.
 
 With the `Caption` property, we can set the title of the tool window. The `Content` property defines an object that can handle the UI of the window. We set it to a new instance of `WelcomeToolWindowControl`, which is a WPF user control instance.
 
-_NOTE: The `Content` property’s value is a `System.Object`. The Managed Package Framework checks the run time type of the value against several alternatives to display the UI of the tool window. A WPF `UIElement` is one of these options.
+{: class="note"}
+__Note__: The `Content` property’s value is a `System.Object`. The Managed Package Framework checks the run time type of the value against several alternatives to display the UI of the tool window. A WPF `UIElement` is one of these options.
 
 ### The Tool Window UI
 
@@ -197,7 +201,8 @@ There is nothing special with the `WelcomeToolWindowControl` that defines the UI
 
 Nonetheless, as the highlighted lines in the markup show, you can use predefined `DynamicResource` bindings to set colors and other visual resources to match the current theme settings of the IDE. With these settings, the `WelcomeToolWindowControl` applies the appropriate background and text colors with both the light and back IDE themes.
 
-_NOTE: For the full list of `VsBrush` resources, check this link: [https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.vsbrushes.aspx](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.vsbrushes.aspx). The `VsBrushes` static class declares all resource keys you can use with the `VsBrush` resource prefix. When you convert `VsBrushes` static properties to `VsBrush` resource keys, just omit the “Key” suffix from the property name. For example, the `VsBrushes.WindowKey` property tells that you can use the `VsBrush.Window` resource name with `DynamicResource`._
+{: class="note"}
+__Note__: For the full list of `VsBrush` resources, check this link: [https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.vsbrushes.aspx](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.vsbrushes.aspx). The `VsBrushes` static class declares all resource keys you can use with the `VsBrush` resource prefix. When you convert `VsBrushes` static properties to `VsBrush` resource keys, just omit the “Key” suffix from the property name. For example, the `VsBrushes.WindowKey` property tells that you can use the `VsBrush.Window` resource name with `DynamicResource`.
 
 There is nothing surprising in the code behind the markup:
 

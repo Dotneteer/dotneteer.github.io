@@ -61,7 +61,8 @@ This code does a cheap initialization in its constructor—it sets up the `_gree
 
 When the constructor of `GreetingPackage` has been executed, the package instance is just an object in the process memory, and it does not hold any reference to any object that accesses the Visual Studio shell. However, the IDE has a reference to the `GreetingPackage` instance. After creating the package, the Visual Studio Shell sites the package. As a part of the siting process, the shell invokes the `Initialize` method. `Initialize` is a virtual method, and invoking the base class’s `Initialize` method consummates the siting. Now, `GreetingPackage` has access to the shell and other packages.
 
-_NOTE: In reality, each Visual Studio Package implements the `IVsPackage` interface. The Managed Package Framework provides the `Package` base class (declared in the `Microsoft.VisualStudio.Shell` namespace), which simplifies the siting with `Initialize`._
+{: class="note"}
+__Note__: In reality, each Visual Studio Package implements the `IVsPackage` interface. The Managed Package Framework provides the `Package` base class (declared in the `Microsoft.VisualStudio.Shell` namespace), which simplifies the siting with `Initialize`.
 
 The code utilizes the `GetService` method to access the Visual Studio shell:
 
@@ -73,7 +74,8 @@ Observe, it is the Service Locator pattern. By invoking `GetService`, you get an
 
 When you moved the `GetService` call into the constructor, the package load would fail, because at that moment the package would not be sited yet, and `GetService` could not retrieve the expected service object.
 
-_NOTE: Should you omit the `base.Initialize()` call, the package would still work, but a part of the initialization would not be carried out._
+{: class="note"}
+__Note__: Should you omit the `base.Initialize()` call, the package would still work, but a part of the initialization would not be carried out.
 
 ### Loading the Package
 
@@ -144,7 +146,8 @@ A part of this code looks weird—especially if you are a young developer grown 
 * The `ThrowOnFailure` method helps aborting the current operation when something fails. As its name suggests, this method signs failures with throwing exceptions.
 * Instead of Boolean flags, integer values are used with the C semantics: zero means false, all other values produce true.
 
-_NOTE: With every release of the Visual Studio SDK, more and more of the COM functionality as wrapped into managed objects. Nonetheless, still a substantial portion of the service operations do not have their managed pairs._
+{: class="note"}
+__Note__: With every release of the Visual Studio SDK, more and more of the COM functionality as wrapped into managed objects. Nonetheless, still a substantial portion of the service operations do not have their managed pairs.
 
 ### The Experimental Instance
 

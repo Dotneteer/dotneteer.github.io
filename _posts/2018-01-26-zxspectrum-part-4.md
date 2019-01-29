@@ -9,7 +9,8 @@ abstract: >-
 
 Starting with this article, you will see tons of C# code. Here, I treat the main concepts and high-level implementation details of the Z80 CPU emulation.
 
-_Note: You may ask, why I have chosen the C# programming language—and why not another, e.g., C++. I have a short and a long answer. The short answer is this: I’ve been working with .NET since 2000, and I’m a rabid fan of the framework and the C# programming language. I will share the longer answer as a separate blog post in the future._
+{: class="note"}
+__Note__: You may ask, why I have chosen the C# programming language—and why not another, e.g., C++. I have a short and a long answer. The short answer is this: I’ve been working with .NET since 2000, and I’m a rabid fan of the framework and the C# programming language. I will share the longer answer as a separate blog post in the future.
 
 In the [previous post](/zx-spectrum/2018/01/23/zxspectrum-part-3.html), I already treated the fundamentals of the Z80 CPU, those that were essential when I designed the emulation.
 
@@ -37,7 +38,8 @@ namespace Spect.Net.SpectrumEmu.Abstraction.Devices
 
 As you can see, `IDevice` is a simple concept: you can `Reset()` it.
 
-_Note: In the __SpectNetIde__ source code, you will find a lot of comments. In the blog post, I omit most of the comments for the sake of brevity. Whenever it has value, I include the namespaces of types, as they help you to lookup the corresponding source code file.__
+{: class="note"}
+__Note__: In the __SpectNetIde__ source code, you will find a lot of comments. In the blog post, I omit most of the comments for the sake of brevity. Whenever it has value, I include the namespaces of types, as they help you to lookup the corresponding source code file.
 
 ### The Z80 CPU as a Device
 
@@ -211,7 +213,8 @@ public byte C;
 
 The __B__ and __C__ fields take the locations at offset 3 and 2, respectively, so they precisely overlay with __BC__. When I assign a value to __BC__, it affects the memory area of __B__ and __C__, and thus immediately changes the value of these 8-bit registers, and vice-versa.
 
-_Note: `StructLayout` and `FieldOffset` together can help to implement the `union` construct of C/C++._
+{: class="note"}
+__Note__: `StructLayout` and `FieldOffset` together can help to implement the `union` construct of C/C++.
 
 You can see a register you probably have not heard about yet, its __WZ__. Well, this is an internal register of the Z80 CPU that helps to put a 16-bit register’s value onto the address bus. The only way to load the contents of these 16-bit registers is via the data bus. Two transfers will be necessary along the data bus to transfer 16 bits, and this is where __WZ__ helps. You cannot reach the contents of this internal register programmatically.
 
@@ -237,7 +240,8 @@ namespace Spect.Net.SpectrumEmu.Cpu
 }
 ```
 
-_Note: Initially I used an enum type, but later refactored it to byte constants. This approach made my flag-related operations shorter as I could avoid unnecessary type casts._
+{: class="note"}
+__Note__: Initially I used an enum type, but later refactored it to byte constants. This approach made my flag-related operations shorter as I could avoid unnecessary type casts.
 
 Similarly to `FlagSetMask`, I have a collection of byte constants that are more useful when setting or resetting individual flags:
 
@@ -283,7 +287,8 @@ namespace Spect.Net.SpectrumEmu.Cpu
 
 As you see, `Z80StateFlags` contains value members (with the `Inv` prefix) that can mask out the individual flag values. The benefit of this way is that I can keep the states of all signals in a variable of `Z80StateFlags` and use a simple condition (`state == 0`, where `state` is a `Z80StateFlags`) to check if any of the signals is set.
 
-_Note: `Int`, `Nmi`, and `Reset` represent the CPU signals with the same names. `Halted` is an output signal that the CPU uses to tell the external devices it is in HALTed state._
+{: class="note"}
+__Note__: `Int`, `Nmi`, and `Reset` represent the CPU signals with the same names. `Halted` is an output signal that the CPU uses to tell the external devices it is in HALTed state.
 
 Earlier, you saw that the `IZ80Cpu` interface defines a few members related to interrupt state:
 
@@ -483,7 +488,8 @@ public  partial class Z80Cpu
 
 As you see, I added methods that emulate the time passes (by means of increasing clock cycle counts). Because in the implementation of concrete Z80 instructions it is a typical operation to use delays with 1, 2, … 7 clock cycles, I created named methods for them. To make them as fast as possible, I decorated them with the `[MethodImpl(MethodImplOptions.AggressiveInlining)]` attribute to let the JIT-compiler create inline code when invoking them.
 
-_Note: Code inlining of means that the compiler inserts the entire function body into the code wherever you invoke the particular function—instead merely creating the invocation code. In C++, creating inline code is easy. In .NET, it is the task of the JIT compiler. With the `MethodImpl` attribute, you can give a hint to the JIT-compiler to inline the code, but you cannot force it._
+{: class="note"}
+__Note__: Code inlining of means that the compiler inserts the entire function body into the code wherever you invoke the particular function—instead merely creating the invocation code. In C++, creating inline code is easy. In .NET, it is the task of the JIT compiler. With the `MethodImpl` attribute, you can give a hint to the JIT-compiler to inline the code, but you cannot force it.
 
 ### The Main Execution Cycle
 
@@ -759,7 +765,8 @@ __IM 0__ reads one byte from the device and executes the corresponding instructi
 
 As you remember, __IM 2__ uses __I__ as the higher-order byte and the value read from the device as the lower-order byte to create a 16-bit address and then uses this vector to read the interrupt handler’s routine address. In the `switch` statement, the default case handles __IM 2__. It assumes that the device did not respond with any data (and so the CPU sees __$FF__), and calculates the routine address accordingly.
 
-_Note: This method sets the `MaskableInterruptModeEntered` flag to true to tell the debugging tool that we are executed into the maskable interrupt routine. This setting has nothing to do with Z80 emulation._
+{: class="note"}
+__Note__: This method sets the `MaskableInterruptModeEntered` flag to true to tell the debugging tool that we are executed into the maskable interrupt routine. This setting has nothing to do with Z80 emulation.
 
 ### Executing Instructions
 

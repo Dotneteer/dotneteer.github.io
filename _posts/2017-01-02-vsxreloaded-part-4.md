@@ -162,7 +162,8 @@ namespace WelcomeCommandPackage
 }
 ```
 
-_NOTE: Please observe, I removed the generated commands and changed the syntax to C# 6.0 for the sake of conciseness. Also, I renamed a few class members to adopt to the naming conventions I use._
+{: class="note"}
+__Note__: Please observe, I removed the generated commands and changed the syntax to C# 6.0 for the sake of conciseness. Also, I renamed a few class members to adopt to the naming conventions I use.
 
 A command is identified with a tuple of a GUID and an integer. Accordingly, the ID of `WelcomeCommand` is composed of `CommandSet` and `COMMAND_ID`:
 
@@ -217,7 +218,8 @@ private void MenuItemCallback(object sender, EventArgs e)
 }
 ```
 
-_NOTE: The VsShellUtilities class contains about 50 static members that help you with shell-related common tasks such as showing dialogs, checking the state of the IDE, managing documents, and much more._
+{: class="note"}
+__Note__: The VsShellUtilities class contains about 50 static members that help you with shell-related common tasks such as showing dialogs, checking the state of the IDE, managing documents, and much more.
 
 ### The .vsct File
 
@@ -277,7 +279,8 @@ The package attribute of `<Commands>` links the nested commands to `WelcomeComma
 
 Commands can be placed into the menu structure of the Visual Studio shell through command groups. The single `<Group>` element within `<Groups>` declares a logical container (identified with a guid and an id). The `<Parent>` element tells that this logical command group should be put into the main menu of the IDE (`guid="guidSHLMainMenu"`), within the Tools menu (`id="IDM_VS_MENU_TOOLS"`).
 
-_NOTE: The aforementioned identifiers are declared in the `vsshlids.h` file that is imported with the `<Extern href="vsshlids.h"/>` node._
+{: class="note"}
+__Note__: The aforementioned identifiers are declared in the `vsshlids.h` file that is imported with the `<Extern href="vsshlids.h"/>` node.
 
 The `<Buttons>` section declares triggerable menu items with their visual appearance. The single command in our package goes into a menu item declared with the nested `<Button>` element. The `<Parent>` node refers to the logical container the menu item belongs to. As you see from the markup above, it is the single `<Group>` we placed into the Tool menu.
 

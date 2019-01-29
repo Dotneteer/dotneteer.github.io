@@ -197,7 +197,7 @@ for (let i = 0; i < wiggins.length; i++) {
 console.log('The loop variable is not valid:', i);
 ```
 
-###No Hoisting with let
+### No Hoisting with let
 
 While the `var` declaration hoists the variable to the top of its declaring context—global or function—, `let` does not. The following code snippet raises an error (`ReferenceError`) with the `typeof child` condition, because, at the point where the expression is used, the `child` variable is not defined yet:
 
@@ -229,7 +229,8 @@ army = "Salamander";
 
 Because `const` forbids reassignment, the last code line raises a `TypeError` with the “Assignment to constant variable” message.
 
-_NOTE: When you define a const, you need to initialize it immediately. If you omit the initialization, the engine raises a `SyntaxError`._
+{: class="note"}
+__Note__: When you define a const, you need to initialize it immediately. If you omit the initialization, the engine raises a `SyntaxError`.
 
 Just as `let`, `const` is a block-level declaration:
 
@@ -342,7 +343,8 @@ for(const key in petraStats) {
 
 Here, the code does not reassign the key iteration variable. The scope of the for-in-loop’s iteration variable is the iteration block. Internally, the JavaScript engine initializes key to the corresponding string value in each iteration.
 
-_NOTE: ES 2015 has a new construct, the iterator. The for-of-loop works with iterators, as you will learn about it in a future article._
+{: class="note"}
+__Note__: ES 2015 has a new construct, the iterator. The for-of-loop works with iterators, as you will learn about it in a future article.
 
 ### Mending For-loops with let
 
@@ -450,7 +452,8 @@ Well, `commander` used in the function is the same variable declared outside of 
 
 When the JavaScript engine parses this code, it first scans for variables and then hoists functions. By the time `setCommander` is analyzed, the engine knows `commander`. During code execution, when the flow reaches the `let` declaration, `commander` is removed from the TDZ. The invocation of `setCommander` assigns “Bean” to the variable.
 
-_HINT: Try what output this code snippet produces when you change the lines of variable declaration and `setCommander()` invocation._
+{: class="note"}
+__Hint__: Try what output this code snippet produces when you change the lines of variable declaration and `setCommander()` invocation.
 
 ### How to Move from var to let and const
 

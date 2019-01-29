@@ -23,9 +23,9 @@ __3__. Create a new Custom Tool Window—name the file GreetingToolWindow.cs.
 
 #### Changing the Tool Window UI
 
-At this point, you have a very simple VSPackage that shows the same tool window you created in Part #5.
+At this point, you have a very simple VSPackage that shows the same tool window you created in [Part #5](/visual/studio/extensibility/2017/01/05/vsxreloaded-part-5.html).
 
-__4__. Modify the GreetingToolWindow.xaml file to change the UI:
+__4__. Modify the `GreetingToolWindow.xaml` file to change the UI:
 
 ```xml
 <UserControl x:Class="SimpleOptionsPagesPackage.GreetingToolWindowControl"
@@ -123,7 +123,8 @@ Now, as you run the modified package in the Experimental Instance (Ctrl+F5), you
 
 *__Figure 2__: The options page of the Greetings Package*
 
-_HINT: Check how the property adornments of the `GreetingsOptionsGrid` class show up in the UI._
+{: class="note"}
+__Hint__: Check how the property adornments of the `GreetingsOptionsGrid` class show up in the UI.
 
 The package-specific options page behaves just like the ones shipped with Visual Studio out-of-the-box. As Figure 3 shows, the IDE provides search support through the Quick Launch (Ctrl+Q) command.
 
@@ -146,7 +147,8 @@ The `ProvideOptionsPage` attribute has several constructors. The one we used has
 
 The first is a type that represents the class implementing the options page. The second and third arguments register the category, and the subcategory of the page (check Figure 2), respectively. These are non-localized names. You can provide localized names with resources; in this case, the fourth and fifth argument specify the corresponding resource IDs. The true value passed in the sixth argument tells that the options page can be accessed through the Visual Studio automation mechanism.
 
-_NOTE: At this point, it does not matter whether you use the true or false value of the sixth argument. This sample works with both. For future use, the best way is always to pass true._
+{: class="note"}
+__Note__: At this point, it does not matter whether you use the true or false value of the sixth argument. This sample works with both. For future use, the best way is always to pass true.
 
 The options page now stores the information that we can set in the Options dialog, but we have not used these settings yet. Let’s modify the code so that we can reflect the changes of the text settings in the tool window.
 
@@ -204,7 +206,8 @@ The private `TextSize` and `TextColor` properties obtain the options page settin
 
 The `ToolWindowLoaded` event handler method takes care of applying the text settings.
 
-_NOTE: In this implementation, for the sake of simplicity, you should close and then display the `GreetingsToolsWindow` to let the text settings be updated according to the current option values._
+{: class="note"}
+__Note__: In this implementation, for the sake of simplicity, you should close and then display the `GreetingsToolsWindow` to let the text settings be updated according to the current option values.
 
 This solution requires passing the tool window instance to its UI. Thus, we need to modify the `GreetingToolWindow` class, too:
 

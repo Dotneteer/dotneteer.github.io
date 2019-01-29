@@ -61,15 +61,17 @@ Let’s see a few examples:
 * The __LD (IX+$3C),$87__ operation stores __$87__ in the memory address calculated from the current value of __IX__ plus the __$3C__ displacement. It starts with the __$DD__ prefix and the __$36__ operation code. The entire operation contains the __$3C__ displacement, and then __$87__ argument. So, altogether it has four bytes: __$DD__, __$36__, __$3C__, and __$87__.
 * The __RLC (IY+$2F),C__ instruction starts with the __$FD__ prefix (it is __IY__-indexed), then goes on with the __$CB__ prefix (bit manipulation). There are two more bytes, __$01__, the operation code, and __$2F__, the displacement, respectively. The entire operation has these four bytes: __$FD__, __$CB__, __$01__, __$2F__.
 
-*Note: In this article, I do not intend to teach you Z80 instructions in details. If you’re interested in Z80 Assembler programming, you’ll find enough information. Here are two pages to start:
+{: class="note"}
+__Note__: In this article, I do not intend to teach you Z80 instructions in details. If you’re interested in Z80 Assembler programming, you’ll find enough information. Here are two pages to start:
 http://sgate.emt.bme.hu/patai/publications/z80guide/
-http://z80-heaven.wikidot.com/system:tutorials*
+http://z80-heaven.wikidot.com/system:tutorials
 
 ### Undocumented Instructions and Registers
 
 The official Z80 documentation—I do not know why—omits hundreds of operations the Z80 can execute. Many of these are related to the higher and lower eight bits of the __IX__ and __IY__ index registers (named __XL__, __XH__, __YL__, and __YH__; or sometimes __IXL__, __IXH__, __IYL__, and __IYH__).
 
-_Note: Fortunately, you can find reliable documents on the internet, which give you those missing details. You need to know that many ZX Spectrum games utilize these undocumented instructions, so a high-fidelity emulator must implement them—this it what SpectNetIde does, too._
+{: class="note"}
+__Note__: Fortunately, you can find reliable documents on the internet, which give you those missing details. You need to know that many ZX Spectrum games utilize these undocumented instructions, so a high-fidelity emulator must implement them—this it what SpectNetIde does, too.
 
 Figure 2, 3, 4, 5, and 6 show the entire instruction set of Z80. The reddish cells are the initially undocumented instructions of the CPU. Please note, Figure 5 and Figure 6 display the __IX__-indexed instructions. You can use the same instructions with the __$FD__ prefix for the __IY__ register.
 
@@ -97,7 +99,8 @@ Figure 2, 3, 4, 5, and 6 show the entire instruction set of Z80. The reddish cel
 
 If you are about to write a ZX Spectrum emulator—or any computer emulator—you soon learn that taking care of timing is probably the most important thing. Without this, you won’t be able to create a high-fidelity emulation of real hardware.
 
-_Note: In the future articles in this series I will treat particular aspects of timings in almost every post._
+{: class="note"}
+__Note__: In the future articles in this series I will treat particular aspects of timings in almost every post.
 
 The Z80 CPU executes instructions as a series of subsequent machine cycles. To understand how it works, Figure 7 gives you the detailed timing of the __INC (HL)__ instruction. __INC (HL)__ increments the value stored at the memory address pointed by the __HL__ register pair.
 
@@ -131,7 +134,8 @@ To let peripherals and other devices know that the CPU executes __M1__, Z80 has 
 
 It may happen that during memory and I/O operations the CPU needs to wait while the memory or a device gets ready for a data transfer. The CPU has a __WAIT__ input signal; devices may use it to sign that they are not prepared to let the CPU carry on the read or write operation.
 
-_Note: Later, in another post, you will learn that the __$4000–$7FFF__ range of memory in ZX Spectrum 48K is contended. Sometimes, when the CPU wants to read or write the memory, it’s forced to __WAIT__, as the ULA has priority to keep the electron ray in the cathode tub uninterrupted._
+{: class="note"}
+__Note__: Later, in another post, you will learn that the __$4000–$7FFF__ range of memory in ZX Spectrum 48K is contended. Sometimes, when the CPU wants to read or write the memory, it’s forced to __WAIT__, as the ULA has priority to keep the electron ray in the cathode tub uninterrupted.
 
 Memory read and write, I/O read and write machine cycles have their detailed timings—similarly to __M1__. Here I won’t detail them. If you are interested, check the official Zilog Z80 documentation here.
 

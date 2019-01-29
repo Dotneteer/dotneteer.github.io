@@ -71,3 +71,37 @@ pre, code {
 .post-title {
   color: #20a0ff;
 }
+
+.links-top {
+  margin-bottom: 24px;
+}
+
+.links-bottom {
+  margin-top: 24px;
+}
+
+.link-right {
+  text-align: right;
+}
+
+pre.highlight {
+  padding: 4px;
+  background-color: #ffffff;
+  margin: 12px 0px;
+}
+
+code {
+  background-color: #dddddd;
+  box-shadow: none;
+  font-size: 18px;
+}
+
+pre code {
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+.note {
+  background-color: #e0e0e0;
+  padding: 8px 12px;
+}

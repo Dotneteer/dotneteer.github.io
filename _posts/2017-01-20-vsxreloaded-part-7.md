@@ -281,7 +281,8 @@ public class GreetingsOptionsPage : DialogPage
 
 The `IWin32Windows` interface (declared in the `System.Windows.Forms` namespace) represents an object that can return a window handle. By default, Window returns a handle to a user control that displays the property grid. By overriding it, we can provide a handle to a custom control instance, just as we do in this code. Evidently, we return a handle to the user control that represents the custom options page UI.
 
-_NOTE: You can host WPF User Controls in options pages, too, nonetheless it requires some additional hacking. See [this article](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms) for more details._
+{: class="note"}
+__Note__: You can host WPF User Controls in options pages, too, nonetheless it requires some additional hacking. See [this article](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms) for more details.
 
 When you run the package, the Experimental Instance shows the custom UI (Figure 4).
 
@@ -390,7 +391,8 @@ namespace SimpleOptionsPagesPackage
 }
 ```
 
-_NOTE: I do not prefer static classes and events because they may cause difficulties when unit testing. I’d rather use some lightweight messaging, such as the one in the MVVM Light Toolkit._
+{: class="note"}
+__Note__: I do not prefer static classes and events because they may cause difficulties when unit testing. I’d rather use some lightweight messaging, such as the one in the MVVM Light Toolkit.
 
 Now, in `GreetingToolWindowControl`, you can handle the `OptionsChanged` event:
 
