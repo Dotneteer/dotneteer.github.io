@@ -105,3 +105,49 @@ pre code {
   background-color: #e0e0e0;
   padding: 8px 12px;
 }
+
+.post-attrs {
+  display: flex;
+  background: #e0e0e0;
+  border-top: 1px solid #606060;
+  border-bottom: 1px solid #606060;
+  padding: 4px 8px;
+  margin-bottom: 24px;
+}
+
+.post-label {
+  font-weight: bold;
+  margin-right: 12px;
+  text-transform: uppercase;
+}
+
+.post-value {
+  margin-right: 18px;
+  text-transform: uppercase;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+.post-list-item {
+  padding-left: 0px;
+  margin-left: 0px;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin-bottom: 8px;
+
+}

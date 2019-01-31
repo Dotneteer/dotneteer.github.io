@@ -3,6 +3,7 @@ layout: post
 title:  "Functional JavaScript Programming — Part #1: Introduction"
 date:   2016-10-15 13:20:00 +0100
 categories: javascript
+tags: ES2015, javascript
 abstract: >-
   Functional programming is an awesome thing. There are many functional languages out of the space, so if you want to cultivate your knowledge in an artistic level, you can turn to a significant number of them including Haskell, OCaml, F#, ML, Clojure, Erlang, Lisp, and many more.
 ---

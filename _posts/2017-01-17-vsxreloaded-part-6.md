@@ -2,7 +2,12 @@
 layout: post
 title:  "VSXReloaded — Part #6: Creating Options Pages"
 date:   2017-01-17 13:20:00 +0100
-categories: "Visual Studio Extensibility"
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 abstract: >- 
   When you implement an extension package for Visual Studio, you often need to provide UI to allow the user to manage package specific settings. Though you can create your custom UI from scratch, there is an easier and faster way to integrate these settings with the IDE—by adding options pages.
 ---
@@ -23,7 +28,7 @@ __3__. Create a new Custom Tool Window—name the file GreetingToolWindow.cs.
 
 #### Changing the Tool Window UI
 
-At this point, you have a very simple VSPackage that shows the same tool window you created in [Part #5](/visual/studio/extensibility/2017/01/05/vsxreloaded-part-5.html).
+At this point, you have a very simple VSPackage that shows the same tool window you created in [Part #5](/visual%20studio%20extensibility/2017/01/05/vsxreloaded-part-5.html).
 
 __4__. Modify the `GreetingToolWindow.xaml` file to change the UI:
 

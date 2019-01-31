@@ -26,6 +26,12 @@
     <div id="main_content_wrap" class="outer">
         <section id="main_content" class="main-columns">
             <section class="main-area">
+              <div class="post-attrs">
+                <span class="post-label">Published</span>
+                <span class="post-value">{{ page.date | date_to_string }}</span>
+                <span class="post-label">Category</span>
+                <span class="post-value">{{ page.categories }}</span>
+              </div>
               <!-- LINKS TO PREVIOUS/NEXT -->
               <div class="links-top">
                 <div class="link">
@@ -57,7 +63,20 @@
                 </div>
               </section>
             <aside class="sidebar">
-              This is sidebar
+              <div class="sidebar-title">More in this category:</div>
+              <ul class="sidebar-list">
+                  {% for post in site.posts %} 
+                  {% if post.categories == page.categories %}
+                   <li class="post-list-item"><a href="{{ post.url }}">{{ post.title }}</a></li> 
+                  {% endif %}
+                  {% endfor %}
+              </ul>
+              <div class="sidebar-title">Other categories:</div>
+              <ul class="sidebar-list">
+                  {% for cat in site.categories %} 
+                   <li class="post-list-item"><a href="cat">{{ cat[0] }}</a></li> 
+                  {% endfor %}
+              </ul>
             </aside>
           </section>
         </div>

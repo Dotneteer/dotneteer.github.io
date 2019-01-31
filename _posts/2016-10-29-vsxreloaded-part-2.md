@@ -2,7 +2,12 @@
 layout: post
 title:  "VSXReloaded — Part #2: Creating an Empty Visual Studio Package"
 date:   2016-12-29 13:20:00 +0100
-categories: "Visual Studio Extensibility"
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 abstract: >- 
   There is no better way to learn about Visual Studio Packages than creating a simple one. In this post, I will guide you through the steps of establishing a simple skeleton for your custom VSPackage.
 ---

@@ -2,7 +2,12 @@
 layout: post
 title:  "VSXReloaded — Part #4: Creating a Package with a Single Command"
 date:   2017-01-02 13:20:00 +0100
-categories: "Visual Studio Extensibility"
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 abstract: >- 
   In this post, you will create a very simple package that adds a command to the Tools menu. When you click the menu item that represents the command, a message box confirms that the command has been invoked.
 ---

@@ -2,7 +2,12 @@
 layout: post
 title:  "VSXReloaded — Part #1: How to Start Learning Visual Studio Extensibility"
 date:   2016-12-28 13:20:00 +0100
-categories: javascript 
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 ---
 
 It’s been a long time since I wrote my last Visual Studio Extensibility article, back in February 2009. That time—after about two years of active blogging about VSX—I turned to customers and projects that did not allow spending enough time with my favorite topic. Seven years of silence is too much. However, in the recent months, I have been working on projects where extending Visual Studio gives excellent value to the products my team is continuously developing.

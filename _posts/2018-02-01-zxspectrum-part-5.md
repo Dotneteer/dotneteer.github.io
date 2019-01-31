@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ZX Spectrum IDE — Part #5: Implementing Z80 instructions (1)"
-date:   2018-02-01 13:20:00 +0100
+date:   2018-02-01
 categories: "ZX-Spectrum"
 abstract: >- 
   The CPU has more than 1300 instructions, and thus Z80Cpu should take care each of them. In this post, you will learn the implementation details behind a few Z80 instructions.

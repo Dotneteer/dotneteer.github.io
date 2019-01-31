@@ -2,14 +2,19 @@
 layout: post
 title:  "VSXReloaded — Part #3: Adding an Action to a Package"
 date:   2016-12-31 13:20:00 +0100
-categories: "Visual Studio Extensibility"
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 abstract: >- 
   In the previous posts, you created an empty Visual Studio Package that did not do add any useful functionality to the IDE, except showing up its identity in the Help \| About dialog. In this post, you will learn a few more details about VSPackages.
 ---
 
-In the previous posts, you created an empty Visual Studio Package that did not do add any useful functionality to the IDE, except showing up its identity in the __Help \| About__ dialog. In this post, you will learn a few more details about VSPackages.
+In the [previous posts](/visual%20studio%20extensibility/2016/12/29/vsxreloaded-part-2.html), you created an empty Visual Studio Package that did not do add any useful functionality to the IDE, except showing up its identity in the __Help \| About__ dialog. In this post, you will learn a few more details about VSPackages.
 
-We are going to create a package that displays a simple greeting message in the Output tool window. Let’s start with creating a new package—similarly, as we did in the previous post. This time we name the project __GreeterPackage__. Here is a short recap of the steps to start the project:
+We are going to create a package that displays a simple greeting message in the Output tool window. Let’s start with creating a new package—similarly, as we did in the [previous posts](/visual%20studio%20extensibility/2016/12/29/vsxreloaded-part-2.html). This time we name the project __GreeterPackage__. Here is a short recap of the steps to start the project:
 
 __1__. Start a new Visual Studio project. In the New Project dialog, select the Extensibility template category under __Visual C# \| Windows__, and then choose the VSIX Project template.
 

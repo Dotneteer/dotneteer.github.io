@@ -2,7 +2,12 @@
 layout: post
 title:  "VSXReloaded — Part #7: Creating Options Pages with Custom UI"
 date:   2017-01-20 13:20:00 +0100
-categories: "Visual Studio Extensibility"
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 abstract: >- 
   Often, you need to add your custom UI instead of a property grid to provide a better user experience. For example, specifying a color with its textual name is not an excellent way,since you have names only for several dozen colors out of the 16 million available through RGB codes. In this post, you will learn to create your custom options page UI.
 ---
@@ -11,7 +16,7 @@ In the previous post, I showed you how easy is to add an options page to a VSPac
 
 In this post, you will learn to create your custom options page UI. By default, you need to create Windows Forms custom controls to represent your page—thus, for the sake of simplicity, I will use this technology.
 
-Instead of creating a new package, you carry on with the `SimpleOptionsPagePackage` sample you implemented in [Part #6](/visual/studio/extensibility/2017/01/17/vsxreloaded-part-6.html). First, you are going to create the custom UI to represent the same text settings that you applied in the previous post. Next, you will update the tool window to use the options page with the custom UI.
+Instead of creating a new package, you carry on with the `SimpleOptionsPagePackage` sample you implemented in [Part #6](/visual%20studio%20extensibility/2017/01/17/vsxreloaded-part-6.html). First, you are going to create the custom UI to represent the same text settings that you applied in the previous post. Next, you will update the tool window to use the options page with the custom UI.
 
 ### Creating the Options Page Class
 
@@ -236,7 +241,7 @@ The constructor binds the user control to its hosting options page so that it ca
 
 ### Binding the Custom UI with the Options Page
 
-Now, you can add the new options page to `OptionsPagesPackage` with the same `ProvideOptionPage` attribute used in [Part #6](/visual/studio/extensibility/2017/01/17/vsxreloaded-part-6.html):
+Now, you can add the new options page to `OptionsPagesPackage` with the same `ProvideOptionPage` attribute used in [Part #6](/visual%20studio%20extensibility/2017/01/17/vsxreloaded-part-6.html):
 
 ```csharp
 [PackageRegistration(UseManagedResourcesOnly = true)]

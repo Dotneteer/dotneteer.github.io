@@ -2,19 +2,24 @@
 layout: post
 title:  "VSXReloaded — Part #5: Creating a Package with a Tool Window"
 date:   2017-01-05 13:20:00 +0100
-categories: "Visual Studio Extensibility"
+categories:
+    - Visual Studio Extensibility
+tags:
+    - VSX,
+    - VSPackage
+    - C#
 abstract: >- 
   You often need to create custom user interfaces for tools and utilities you integrate with the Visual Studio IDE. There are several extensibility points to expand the existing user interface with commands, or output panes. When you want to add an entirely new, separate user interface that can be displayed individually, tool windows provide an easy solution.
 ---
 
-You often need to create custom user interfaces for tools and utilities you integrate with the Visual Studio IDE. There are several extensibility points to expand the existing user interface with commands (as you learned it in the [previous blog post](/visual/studio/extensibility/2017/01/02/vsxreloaded-part-4.html)) or output panes (as you tried it in [Part #3](/visual/studio/extensibility/2016/12/31/vsxreloaded-part-3.html)). When you want to add an entirely new, separate user interface that can be displayed individually, tool windows provide an easy solution.
+You often need to create custom user interfaces for tools and utilities you integrate with the Visual Studio IDE. There are several extensibility points to expand the existing user interface with commands (as you learned it in the [previous blog post](/visual%20studio%20extensibility/2017/01/02/vsxreloaded-part-4.html)) or output panes (as you tried it in [Part #3](/visual%20studio%20extensibility/2016/12/31/vsxreloaded-part-3.html)). When you want to add an entirely new, separate user interface that can be displayed individually, tool windows provide an easy solution.
 
 In this post, you will learn how you can add tool windows to a VSPackage.
 
 We are going to create a very simple package with a single tool window. Start with a new VSIX project—name it __SimpleToolWindowPackage__—and then, add a new VSPackage to the project—name it __SimpleToolWindowPackage__, too.
 
 {: class="note"}
-__Note__: If you do not remember how to carry out these simple steps, go back to [Part #2](/visual/studio/extensibility/2016/12/29/vsxreloaded-part-2.html), and read it again.
+__Note__: If you do not remember how to carry out these simple steps, go back to [Part #2](/visual%20studio%20extensibility/2016/12/29/vsxreloaded-part-2.html), and read it again.
 
 ### Adding a Tool Window
 
@@ -52,7 +57,7 @@ When you added the new tool window item to the project, the Add New Item wizard 
 
 Three of them—`WelcomeToolWindowCommand.png`, `WelcomeToolWindowCommand.cs`, and `WelcomeToolWindowPackage.vsct`, respectively—are custom command files. The three other new files define the tool window (`WelcomeToolWindow.cs`) and its user interface (`WelcomeToolWindowControl.xaml`, `WelcomeToolWindowControl.xaml.cs`).
 
-They custom command files follow the same semantics you already learned in [Part #4](/visual/studio/extensibility/2017/01/02/vsxreloaded-part-4.html). Nonetheless, there are a few differences. The new custom command displays a tool window—and not a message, as it did in the previous post:
+They custom command files follow the same semantics you already learned in [Part #4](/visual%20studio%20extensibility/2017/01/02/vsxreloaded-part-4.html). Nonetheless, there are a few differences. The new custom command displays a tool window—and not a message, as it did in the previous post:
 
 ```csharp
 using System;
