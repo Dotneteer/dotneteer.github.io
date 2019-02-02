@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Roboto:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&amp;subset=greek,greek-ext" rel="stylesheet">
 
     {% seo %}
@@ -63,6 +63,7 @@
                 </div>
               </section>
             <aside class="sidebar">
+              <div class="sidebar-title"><a href="/">Dotneteer's BLOG</a></div>
               <div class="sidebar-title">More in this category:</div>
               <ul class="sidebar-list">
                   {% for post in site.posts %} 
@@ -74,7 +75,7 @@
               <div class="sidebar-title">Other categories:</div>
               <ul class="sidebar-list">
                   {% for cat in site.categories %} 
-                   <li class="post-list-item"><a href="cat">{{ cat[0] }}</a></li> 
+                   <li class="post-list-item"><a href="/category/{{ cat[0] }}.html">{{ cat[0] }}</a></li> 
                   {% endfor %}
               </ul>
             </aside>

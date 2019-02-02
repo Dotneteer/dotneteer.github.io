@@ -2,8 +2,8 @@
 layout: post
 title:  "VSXReloaded — Part #6: Creating Options Pages"
 date:   2017-01-17 13:20:00 +0100
-categories:
-    - Visual Studio Extensibility
+categories: 
+    - "Visual Studio Extensibility"
 tags:
     - VSX,
     - VSPackage
