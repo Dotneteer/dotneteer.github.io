@@ -75,7 +75,7 @@
               <div class="sidebar-title">Other categories:</div>
               <ul class="sidebar-list">
                   {% for cat in site.categories %} 
-                   <li class="post-list-item"><a href="/category/{{ cat[0] }}.html">{{ cat[0] }}</a></li> 
+                   <li class="post-list-item"><a href="/category/{{ cat[0] | downcase }}.html">{{ cat[0] }}</a></li> 
                   {% endfor %}
               </ul>
             </aside>
