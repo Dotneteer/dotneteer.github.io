@@ -1,7 +1,7 @@
 title: Dotneteer's blog
 email: dotneteer@hotmail.com
 description: >- 
-  Down. to. Earth.
+  Rock Around the Code.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: istvannovak
@@ -12,6 +12,18 @@ markdown: kramdown
 theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
+
+collections:  
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

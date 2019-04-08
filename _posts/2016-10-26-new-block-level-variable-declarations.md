@@ -10,7 +10,7 @@ abstract: >-
 
 In contrast to other curly brace programming languages like C, C++, Java, or C#, JavaScript shows some unusual behavior. Take a look at this code snippet:
 
-```JavaScript
+```javascript
 // Exercise-01-01.js
 
 function getWiggin(childIndex) {
